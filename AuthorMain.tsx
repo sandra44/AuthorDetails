@@ -1,5 +1,4 @@
 import * as React from 'react';
-import reload_obj from '../../services/reload';
 import AuthorDetails from './AuthorDetails';
 import Header from './Header';
 import Next from './Next';
@@ -7,18 +6,26 @@ import Search from './Search';
 import Welcome from './Welcome';
 
 interface IAuthorDetails{
-    name: string;
-    imageSource: string;
-    imageUrl: string;
-    books: string[];
+    index: number
 }
 
 export default class AuthorMain extends React.Component<any,IAuthorDetails>{
 
-    next = (e:any) => {
-        e.preventDefault();
-        console.log(this.props.author);
-        reload_obj.nextQue();
+    constructor(props:any){
+        super(props);
+        this.state = {
+          index: 0
+        }
+    }
+
+    
+    next = () => {
+        console.log("here");
+        this.setState({
+           index : this.state.index === 3 ? 0 : this.state.index + 1
+        })    
+
+        console.log(this.state.index)
     }
 
     render(){
@@ -36,10 +43,11 @@ export default class AuthorMain extends React.Component<any,IAuthorDetails>{
                     <Search />
                 </div>
                 <div>
-                    <AuthorDetails author={this.props.author} imageUrl={this.props.author.imageUrl}/>
+                    <AuthorDetails author={this.props.authors[this.state.index]} /> 
+                  
                 </div>
                 <div>
-                    <Next/>
+                    <Next click={this.next}/>
                 </div>
             </div>
             
