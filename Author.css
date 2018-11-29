@@ -1,0 +1,57 @@
+.labels{
+    float: right;
+	color: brown;
+	padding: 10px;
+	margin: 20px;
+}
+
+.search {
+	width: 20%;
+    margin: 20px;
+   
+}
+
+.alert{
+	margin: 2px;
+	align-items: center;
+	background-color: rgb(158, 181, 210)
+}
+.btn-primary{
+	background-color: rgb(10, 108, 141);
+}
+
+.button{
+	float: right;
+	padding: 10px;
+	margin: 20px;
+}
+
+.authorimage {
+	border-top : 30px;
+	margin-top: 30px;
+	height: 350px;
+	max-width: 300px;
+}
+
+.answer {
+	border-left: 4px solid LightBlue;
+	background-color: rgb(230, 248, 254);
+	border-bottom: 1px solid lightblue;
+	padding: 12px 10px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.answer:hover{
+	background-color: LightBlue;
+}
+.authorimage {
+	border-top : 30px;
+	margin-top: 30px;
+	height: 250px;
+	max-width: 200px;
+}
+
+.options{
+	margin-top: 100px;
+	margin-bottom: 10px;
+}
