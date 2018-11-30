@@ -14,18 +14,19 @@ export default class AuthorMain extends React.Component<any,IAuthorDetails>{
     constructor(props:any){
         super(props);
         this.state = {
-          index: 0
+          index : 0 
         }
     }
-
     
     next = () => {
-        console.log("here");
         this.setState({
-           index : this.state.index === 3 ? 0 : this.state.index + 1
-        })    
+            index : this.state.index === 3 ? 0 : this.state.index + 1
+            })    
+    }
 
-        console.log(this.state.index)
+    search = (name:any) => {
+        this.props.authors.map((a:any) => {if(a.name === name){this.setState({index : this.props.authors.indexOf(a)});}});
+        
     }
 
     render(){
@@ -40,17 +41,15 @@ export default class AuthorMain extends React.Component<any,IAuthorDetails>{
                     </div>
                 </div>
                 <div>
-                    <Search />
+                    <Search search={this.search} />
                 </div>
                 <div>
                     <AuthorDetails author={this.props.authors[this.state.index]} /> 
-                  
                 </div>
                 <div>
                     <Next click={this.next}/>
                 </div>
             </div>
-            
         )
     }
 }
